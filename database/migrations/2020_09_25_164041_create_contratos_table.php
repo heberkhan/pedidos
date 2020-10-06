@@ -20,8 +20,8 @@ class CreateContratosTable extends Migration
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->integer('valor');
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
